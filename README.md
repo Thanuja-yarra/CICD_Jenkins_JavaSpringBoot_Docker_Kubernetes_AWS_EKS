@@ -5,6 +5,8 @@
 
 (demo)
 
+Setting up a Jenkins pipeline to deploy a Dockerized Java SpringBoot application to an EKS cluster. It includes steps for installing Jenkins, Docker, and creating an EKS cluster. Additionally, the repository includes the Jenkinsfile that defines the pipeline stages and steps for building the application, pushing the Docker image to ECR, and deploying it to the EKS cluster.
+
 <br>
 
 <img width="1031" alt="Screenshot 2023-03-23 at 13 29 57" src="https://user-images.githubusercontent.com/104728608/227219226-5394e3f9-784a-4184-ba49-76155b1b86cd.png">
