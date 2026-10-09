@@ -7,8 +7,8 @@ pipeline {
     }
 
     environment {
-        APP_NAME = 'my_app'
-        DOCKER_IMAGE = '07thanuja27/my_app'
+        APP_NAME = 'my-app'
+        DOCKER_IMAGE = '07thanuja27/my-app'
         DOCKER_REGISTRY = 'docker.io'
         DOCKER_CREDENTIALS = credentials('docker-credentials')
         K8S_NAMESPACE = 'dev'
