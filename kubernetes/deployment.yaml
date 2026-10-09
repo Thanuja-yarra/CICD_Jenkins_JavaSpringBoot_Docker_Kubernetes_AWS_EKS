@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my_app
+  name: my-app
   namespace: dev
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: my_app
+      app: my-app
   template:
     metadata:
       labels:
-        app: my_app
+        app: my-app
     spec:
       containers:
-        - name: my_app
+        - name: my-app
           image: docker.io/thanuja/my_app:latest
           imagePullPolicy: Always
           ports:
