@@ -12,6 +12,7 @@ pipeline {
         DOCKER_REGISTRY = 'docker.io'
         DOCKER_CREDENTIALS = credentials('docker-credentials')
         K8S_NAMESPACE = 'dev'
+        KUBECONFIG = '/var/lib/jenkins/.kube/config'
     }
 
     stages {
