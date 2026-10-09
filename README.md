@@ -41,7 +41,7 @@ Password: Your Docker Hub access token
 
 Configure the pipeline job to use this repository and branch main.
 
-Set Script Path to Jenkinsfile-K8S-jan23, or rename the file to Jenkinsfile and use that path.
+Set Script Path to Jenkinsfile, or rename the file to Jenkinsfile and use that path.
 
 AWS and Kubernetes configuration
 
