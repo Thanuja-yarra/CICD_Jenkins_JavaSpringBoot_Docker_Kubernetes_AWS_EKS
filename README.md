@@ -12,7 +12,7 @@ Amazon EKS
 Kubernetes
 Repository structure
 .
-├── Jenkinsfile-K8S-jan23
+├── Jenkinsfile
 ├── Dockerfile
 ├── pom.xml
 ├── src/
