@@ -1,19 +1,29 @@
-apiVersion : apps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: akannanspringbootapp 
+  name: my_app
+  namespace: dev
+  labels:
+    app: my_app
+
 spec:
-  replicas: 1
+  replicas: 2
+
   selector:
     matchLabels:
-      app: akannanspringbootapp
+      app: my_app
+
   template:
     metadata:
       labels:
-        app: akannanspringbootapp 
+        app: my_app
+
     spec:
       containers:
-        - name: akannanspringbootapp 
-          image: myacrrepo431.azurecr.io/akannanspringbootapp
+        - name: my_app
+          image: docker.io/thanuja/my_app:latest
+          imagePullPolicy: Always
+
           ports:
-          - containerPort: 80
+            - name: http
+              containerPort: 8085
