@@ -105,7 +105,7 @@ pipeline {
             steps {
                 sh '''
                    kubectl expose deployment my-app \
-                     --name=my-app-service \
+                     --name=my-app-service01 \
                      --type=LoadBalancer \
                      --port=80 \
                      --target-port=8085 \
@@ -125,7 +125,7 @@ pipeline {
                       --timeout=180s
 
                     kubectl get pods -n dev
-                    kubectl get svc my-app-service -n dev
+                    kubectl get svc my-app-service01 -n dev
                 '''
             }
         }
