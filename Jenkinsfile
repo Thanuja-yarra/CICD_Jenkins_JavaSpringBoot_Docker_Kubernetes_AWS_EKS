@@ -101,6 +101,19 @@ pipeline {
             }
         }
 
+        stage('adding loadbalancer') {
+            steps {
+                sh '''
+                   sudo -u jenkins -H kubectl expose deployment my-app \
+                   --name=my-app-service \
+                   --type=LoadBalancer \
+                   --port=80 \
+                   --target-port=8085 \
+                   -n dev
+                   
+            }
+        }
+
         stage('Verify Deployment') {
             steps {
                 sh '''
