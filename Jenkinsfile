@@ -104,12 +104,13 @@ pipeline {
         stage('adding loadbalancer') {
             steps {
                 sh '''
-                   sudo -u jenkins -H kubectl expose deployment my-app \
-                   --name=my-app-service \
-                   --type=LoadBalancer \
-                   --port=80 \
-                   --target-port=8085 \
-                   -n dev
+                   kubectl expose deployment my-app \
+                     --name=my-app-service \
+                     --type=LoadBalancer \
+                     --port=80 \
+                     --target-port=8085 \
+                     -n dev
+                     --dry-run=client -o yaml | kubectl apply -f -
                 '''
                    
             }
@@ -122,6 +123,9 @@ pipeline {
                       deployment/${APP_NAME} \
                       -n ${K8S_NAMESPACE} \
                       --timeout=180s
+
+                    kubectl get pods -n dev
+                    kubectl get svc my-app-service -n dev
                 '''
             }
         }
