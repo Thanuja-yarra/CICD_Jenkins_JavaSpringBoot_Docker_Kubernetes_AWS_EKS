@@ -110,7 +110,6 @@ pipeline {
                      --port=80 \
                      --target-port=8085 \
                      -n dev
-                     --dry-run=client -o yaml | kubectl apply -f -
                 '''
                    
             }
