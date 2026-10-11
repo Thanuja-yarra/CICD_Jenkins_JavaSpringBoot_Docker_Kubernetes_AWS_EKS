@@ -110,6 +110,7 @@ pipeline {
                    --port=80 \
                    --target-port=8085 \
                    -n dev
+                '''
                    
             }
         }
